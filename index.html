@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Images</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Choose a Image to Edit</h2>
+  <div id="image-gallery">
+    <!-- As imagens serão carregadas aqui -->
+  </div>
+
+  <h3>Edite sua Imagem</h3>
+  <canvas id="canvas"></canvas> <!-- Canvas para edição -->
+
+  <button id="continuar-button">Continuar</button> <!-- Botão para enviar a imagem para o AR -->
+
+  <!-- Botões para voltar e enviar por email -->
+  <button id="voltar-button" style="display: none;">Voltar</button>
+  <button id="enviar-email-button" style="display: none;">Enviar por Email</button>
+
+  <!-- Área para mostrar sucesso ao enviar o email -->
+  <div id="email-status"></div>
+
+  <h3>Realidade Aumentada</h3>
+  <a-scene embedded arjs>
+    <a-marker preset="hiro">
+      <a-image id="ar-image" src="#" position="0 0 0" scale="2 2 2"></a-image>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.1/fabric.min.js"></script> <!-- Biblioteca Fabric.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.js"></script> <!-- Supabase -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- EmailJS -->
+  <script src="javascript.js"></script> <!-- Seu script JavaScript -->
+</body>
+</html>
